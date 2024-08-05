@@ -1,0 +1,20 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Personal Finance Manager</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'track_expense' %}">Track Expense</a></li>
+            <li><a href="{% url 'plan_budget' %}">Plan Budget</a></li>
+            <li><a href="{% url 'set_financial_goal' %}">Set Financial Goal</a></li>
+            <li><a href="{% url 'ai_insights' %}">AI Insights</a></li>
+        </ul>
+    </nav>
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

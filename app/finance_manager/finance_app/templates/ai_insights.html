@@ -1,0 +1,11 @@
+<!-- ai_insights.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>AI Insights</h1>
+  <ul>
+    {% for insight in insights %}
+      <li>{{ insight }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

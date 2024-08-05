@@ -1,0 +1,21 @@
+<!-- plan_budget.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Plan Budget</h1>
+  <form method="post">
+    {% csrf_token %}
+    <label for="start_date">Start Date:</label>
+    <input type="date" id="start_date" name="start_date"><br><br>
+    <label for="end_date">End Date:</label>
+    <input type="date" id="end_date" name="end_date"><br><br>
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" name="amount"><br><br>
+    <button type="submit">Submit</button>
+  </form>
+  <ul>
+    {% for budget in budgets %}
+      <li>{{ budget.start_date }} - {{ budget.end_date }} - {{ budget.amount }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

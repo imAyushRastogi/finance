@@ -1,0 +1,21 @@
+<!-- track_expense.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Track Expense</h1>
+  <form method="post">
+    {% csrf_token %}
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date"><br><br>
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" name="amount"><br><br>
+    <label for="category">Category:</label>
+    <input type="text" id="category" name="category"><br><br>
+    <button type="submit">Submit</button>
+  </form>
+  <ul>
+    {% for expense in expenses %}
+      <li>{{ expense.date }} - {{ expense.amount }} - {{ expense.category }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

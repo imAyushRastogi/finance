@@ -1,0 +1,21 @@
+<!-- set_financial_goal.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Set Financial Goal</h1>
+  <form method="post">
+    {% csrf_token %}
+    <label for="goal">Goal:</label>
+    <input type="text" id="goal" name="goal"><br><br>
+    <label for="target_date">Target Date:</label>
+    <input type="date" id="target_date" name="target_date"><br><br>
+    <label for="target_amount">Target Amount:</label>
+    <input type="number" id="target_amount" name="target_amount"><br><br>
+    <button type="submit">Submit</button>
+  </form>
+  <ul>
+    {% for goal in goals %}
+      <li>{{ goal.goal }} - {{ goal.target_date }} - {{ goal.target_amount }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
